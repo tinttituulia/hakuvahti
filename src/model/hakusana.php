@@ -18,7 +18,6 @@ function lisaaHakusanaKayttajalle($idkayttaja,$hakusana) {
 }
 
 /**
-<<<<<<< toiminto-läpikäynti-kooste
  * Hakee tietokannasta yksittäisen käyttäjän hakusanat käyttäjän id:llä.
  * 
  * @author Annastiina Koivu
@@ -28,14 +27,15 @@ function lisaaHakusanaKayttajalle($idkayttaja,$hakusana) {
  * @return array                palauttaa hakusanat assosiatiivisessa taulukossa
  * 
  */
-
 function hae_kayttaja_hakusanat($idkayttaja) {
     $kysely = "SELECT hakusana FROM hakuvahti_hakusana WHERE idkayttaja = $idkayttaja";
 
     $tulos = DB::run($kysely)->fetchAll(PDO::FETCH_ASSOC);
 
     return $tulos;
-=======
+}
+
+/**
  * Poistaa hakusanan käyttäjältä.
  *
  * @author Vee Kankaristo
@@ -45,7 +45,6 @@ function hae_kayttaja_hakusanat($idkayttaja) {
  */
 function poistaHakusanaKayttajalta($idkayttaja, $idhakusana) {
   DB::run('DELETE FROM hakuvahti_hakusana WHERE idkayttaja = ? AND idhakusana = ?',[$idkayttaja, $idhakusana]);
->>>>>>> main
 }
 
 ?>
