@@ -95,7 +95,12 @@ foreach ($kayttajat as $kayttaja => $tiedot) {
         // Lähetetään kooste käyttäjälle.
         $subject = "Hakusanasi löytyi koulutuksista";
         $templ = 'lapikaynti';
-        $muuttujat = ['kurssit' => $loytyneet_kurssit];
+        $muokkauslinkki = "https://neutroni.hayo.fi/~ttolonen/hakuvahti/?sivu=muokkaa&id=" . urlencode($idkayttaja);
+
+        $muuttujat = [
+            'kurssit' => $loytyneet_kurssit,
+            'muokkauslinkki' => $muokkauslinkki
+        ];
 
         $lahetys_onnistui = laheta_email($email, $subject, $templ, $muuttujat);
         echo "Sähköpostin lähetys osoitteeseen $email: " . ($lahetys_onnistui ? "ONNISTUI" : "EPÄONNISTUI") . "\n";

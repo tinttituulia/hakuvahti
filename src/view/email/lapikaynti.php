@@ -40,3 +40,13 @@ foreach ($kurssit as $hakusana => $hakutulos) {
 }
 
 ?>
+
+<?php if (!empty($muokkauslinkki)): ?>
+  <hr style="margin-top: 25px; margin-bottom: 20px; border: 0; border-top: 1px solid #e0e0e0;">
+  <p style="text-align: center; font-size: 14px; color: #555;">
+    Haluatko muuttaa hakusanojasi tai hallinnoida vahtiasi?<br>
+    <a href="<?=$this->e($muokkauslinkki)?>" style="color: #0066cc; text-decoration: underline; font-weight: bold;">
+      Siirry muokkaussivulle tästä
+    </a>
+  </p>
+<?php endif; ?>
