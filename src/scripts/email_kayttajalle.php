@@ -29,7 +29,7 @@ function laheta_email($email, $subject, $templ, $muuttujat = null) {
 
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= "From: neutroni.hayo.fi";
+    $headers .= "From: noreply@neutroni.hayo.fi";
 
     return mail($email, $subject, $message, $headers);
 
